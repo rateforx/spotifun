@@ -1,0 +1,19 @@
+.btn-play {
+    position            : absolute;
+    opacity             : 0;
+    transition          : all 100ms ease;
+    display             : block;
+    width               : 150px;
+    height              : 150px;
+    fill               : #aaa;
+    background-color    : rgba(255, 255, 255, .33);
+    background-image    : url(/play-circle-regular.svg);
+    background-position : center center;
+    background-size     : 50%;
+    background-repeat   : no-repeat;
+    filter              : invert(100%);
+
+    &:hover {
+        opacity : 100;
+    }
+}
