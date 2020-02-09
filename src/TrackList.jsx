@@ -45,8 +45,11 @@ export default class TrackList extends React.Component {
                     flexFlow : 'row wrap',
                 } }
                 pageStart = { 0 }
-                loadMore = { this.loadMore.bind( this ) }
-                hasMore = { this.hasMore }
+                loadMore = { ( page ) => {
+                    console.log( 'loading more tracks' );
+                    this.loadMore( page ).then();
+                } }
+                hasMore = { this.state.hasMore }
                 loader = { <ScaleLoader
                     height = { 35 }
                     width = { 4 }
@@ -55,7 +58,7 @@ export default class TrackList extends React.Component {
                     key = { 0 }
                 /> }
                 initialLoad = { false }
-                useWindow = { false }
+                useWindow = { true }
             >
                 { this.state.tracks && this.state.tracks.map( track => {
                     return <Track
